@@ -47,13 +47,12 @@ class LoginController extends GetxController with LoaderMixin, MessageMixin {
 
   Future<void> loginEmail(String email, String password) async {
     try {
+      _loading(true);
       final user =
           await _userService.loginEmail(email: email, password: password);
-      _loading(true);
       if (user != null) {
         //success
       } else {
-        _userService.logout();
         _message.value = MessageModel(
           title: 'Erro',
           message: 'Usuário ou senha inválidos.',
@@ -61,10 +60,10 @@ class LoginController extends GetxController with LoaderMixin, MessageMixin {
         );
       }
     } on AuthException catch (e) {
-      _userService.logout();
+      _loading(false);
       _message.value = MessageModel(
-        title: 'AuthException',
-        message: 'Em login com email/senha',
+        title: 'Oops',
+        message: e.message,
         isError: true,
       );
     } finally {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo_getx_hive/app/controllers/auth/login/login_controller.dart';
+import 'package:todo_getx_hive/app/routes.dart';
 import 'package:todo_getx_hive/app/views/core/widget/todo_list_field.dart';
 import 'package:todo_getx_hive/app/views/core/widget/todo_list_logo.dart';
 import 'package:validatorless/validatorless.dart';
@@ -130,7 +131,19 @@ class _LoginPageState extends State<LoginPage> {
                         ],
                       ),
                     ),
-
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('Não tem conta ?'),
+                        TextButton(
+                          onPressed: () {
+                            Get.toNamed(Routes.authRegister);
+                          },
+                          child: Text('Cadastre-se'),
+                        )
+                      ],
+                    ),
+                    SizedBox(height: 20),
                     Expanded(
                       child: Container(
                         decoration: BoxDecoration(
@@ -144,7 +157,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         child: Column(
                           children: [
-                            // SizedBox(height: 20),
+                            SizedBox(height: 20),
                             ElevatedButton.icon(
                               onPressed: () {
                                 widget._loginController.loginGoogle();
@@ -161,19 +174,6 @@ class _LoginPageState extends State<LoginPage> {
                                 ),
                               ),
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text('Não tem conta ?'),
-                                TextButton(
-                                  onPressed: () {
-                                    Get.toNamed('/register');
-                                  },
-                                  child: Text('Cadastre-se'),
-                                )
-                              ],
-                            ),
-                            SizedBox(height: 20),
                           ],
                         ),
                       ),

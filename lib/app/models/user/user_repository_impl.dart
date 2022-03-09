@@ -45,22 +45,22 @@ class UserRepositoryImpl implements UserRepository {
           email: email, password: password);
       return userCredential.user;
     } on PlatformException catch (e, s) {
-      // //print(e);
-      // //print(s);
+      // print(e);
+      // print(s);
       throw AuthException(
           message: e.message ?? 'Erro de PlatformException ao realizar login');
     } on FirebaseAuthException catch (e, s) {
-      // //print(e);
-      // //print(s);
+      print('...>e.code: ${e.code}');
+      // print(s);
 
       if (e.code == 'invalid-email') {
         throw AuthException(message: 'Email não válido');
       }
       if (e.code == 'user-disabled') {
         throw AuthException(
-            message: 'Usuario desabilitado para o email consultado');
+            message: 'Usuario desabilitado para o email consultado.');
       }
-      if (e.code == 'user-not') {
+      if (e.code == 'user-not-found') {
         throw AuthException(
             message: 'Não há usuário correspondente a este email');
       }
@@ -158,6 +158,15 @@ class UserRepositoryImpl implements UserRepository {
     final user = _firebaseAuth.currentUser;
     if (user != null) {
       await user.updateDisplayName(name);
+      user.reload();
+    }
+  }
+
+  @override
+  Future<void> updatePhotoURL(String photoUrl) async {
+    final user = _firebaseAuth.currentUser;
+    if (user != null) {
+      await user.updatePhotoURL(photoUrl);
       user.reload();
     }
   }

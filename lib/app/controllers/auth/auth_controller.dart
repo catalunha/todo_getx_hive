@@ -5,6 +5,7 @@ import 'package:todo_getx_hive/app/routes.dart';
 
 class AuthController extends GetxController {
   Rx<User?> _userFirebaseAuth = Rx<User?>(FirebaseAuth.instance.currentUser);
+  User? get user => _userFirebaseAuth.value;
 
   final FirebaseAuth _firebaseAuth;
   final UserService _userService;
@@ -13,7 +14,6 @@ class AuthController extends GetxController {
     required UserService userService,
   })  : _firebaseAuth = firebaseAuth,
         _userService = userService;
-  User? get user => _userFirebaseAuth.value;
 
   @override
   onInit() {
@@ -25,7 +25,7 @@ class AuthController extends GetxController {
         Get.offAllNamed(Routes.home);
       } else {
         print('login');
-        Get.offAllNamed(Routes.login);
+        Get.offAllNamed(Routes.authLogin);
       }
     });
     super.onInit();

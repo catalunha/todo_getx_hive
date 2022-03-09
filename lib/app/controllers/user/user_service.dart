@@ -8,4 +8,5 @@ abstract class UserService {
 
   Future<void> forgotPassword(String email);
   Future<void> updateDisplayName(String name);
+  Future<void> updatePhotoURL(String photoUrl);
 }

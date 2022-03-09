@@ -44,23 +44,23 @@ class _RegisterPageState extends State<RegisterPage> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Todo List',
-                style: TextStyle(fontSize: 10, color: context.primaryColor),
-              ),
+              // Text(
+              //   'Todo List',
+              //   style: TextStyle(fontSize: 10, color: context.primaryColor),
+              // ),
               Text(
                 'Cadastro',
-                style: TextStyle(fontSize: 15, color: context.primaryColor),
+                style: TextStyle(fontSize: 25, color: context.primaryColor),
               )
             ]),
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
         leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: ClipOval(
-                child: Container(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: ClipOval(
+            child: Container(
               color: context.primaryColor.withAlpha(20),
               padding: const EdgeInsets.all(8),
               child: Icon(
@@ -68,7 +68,9 @@ class _RegisterPageState extends State<RegisterPage> {
                 size: 20,
                 color: context.primaryColor,
               ),
-            ))),
+            ),
+          ),
+        ),
       ),
       body: ListView(
         children: [

@@ -29,12 +29,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  # Localizations
+  flutter_localizations:
+    sdk: flutter    
   # Gerenciador de estados
   get: ^4.6.1
-  # Database
+  # LocalStorage
   hive: ^2.0.6
   hive_flutter: ^1.1.0
-  # Firebase
+  # remoteStorage
   firebase_auth: ^3.3.9
   firebase_core: ^1.13.1  
   # Google

@@ -30,4 +30,8 @@ class UserServiceImpl implements UserService {
   @override
   Future<void> updateDisplayName(String name) =>
       _userRepository.updateDisplayName(name);
+
+  @override
+  Future<void> updatePhotoURL(String photoUrl) =>
+      _userRepository.updatePhotoURL(photoUrl);
 }
