@@ -10,6 +10,12 @@ Contudo alterei para GetX e Hive.
 
 Assim posso realizar alguns testes para web e outros que virão. Ele apaga as tasks assim que passa o dia.
 
+
+
+|![home](docs/home.png)|![home](docs/taskCreate.png)|
+|---|---|
+
+
 # HiveBase
 
 Criei uma classe de uso do Hive: lib/app/core/database/hive/hivebase.dart
