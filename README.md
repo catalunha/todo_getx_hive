@@ -52,6 +52,8 @@ Agradeço a abertura de issues para correções e sugestões.
 
 # Palavra final
 
-Deus é bom e vale a pena andar em seus caminhos. Jesus Cristo é um necessaria referencia para nossas vidas.
+Deus é bom e vale a pena andar em seus caminhos. 
+
+Jesus Cristo é uma necessaria referencia para nossas vidas.
 
 
