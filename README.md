@@ -6,10 +6,13 @@ Este projeto da AdF parece simples mas tras muito aprendizado interessante.
 
 A versão do curso usa Provider e banco de dados sqflite. 
 
-Contudo alterei para GetX e Hive.
+Contudo alterei para GetX e Hive. Alguns recursos disponiveis:
 
-Assim posso realizar alguns testes para web e outros que virão. Ele apaga as tasks assim que passa o dia.
-
+* Cria e edita uma task
+* Apagar a task assim que o dia passa
+* Filtro com agrupamento de tasks por dia.
+* Ao selecionar a task cumprida vai para o final da lista.
+* Versao para Web (ainda em elaboração...)
 
 
 |![home](docs/home.png)|![home](docs/taskCreate.png)|
