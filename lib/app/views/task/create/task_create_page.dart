@@ -7,7 +7,7 @@ import 'package:todo_getx_hive/app/views/task/create/part/calendar_button.dart';
 import 'package:validatorless/validatorless.dart';
 
 class TaskCreatePage extends StatefulWidget {
-  final TaskCreateController _controller = Get.find();
+  final TaskCreateController _taskCreateController = Get.find();
 
   TaskCreatePage({
     Key? key,
@@ -23,6 +23,8 @@ class _TaskCreatePageState extends State<TaskCreatePage> {
   @override
   void initState() {
     super.initState();
+    _descriptionTec.text =
+        widget._taskCreateController.taskModel?.description ?? "";
   }
 
   @override
@@ -58,7 +60,7 @@ class _TaskCreatePageState extends State<TaskCreatePage> {
               Align(
                 alignment: Alignment.center,
                 child: Text(
-                  'Criar task',
+                  '${widget._taskCreateController.taskModel == null ? "Criar" : "Editar"} task',
                   style: context.titleStyle.copyWith(
                     fontSize: 20,
                   ),
@@ -81,7 +83,7 @@ class _TaskCreatePageState extends State<TaskCreatePage> {
         onPressed: () async {
           final formValid = _formKey.currentState?.validate() ?? false;
           if (formValid) {
-            await widget._controller.save(_descriptionTec.text);
+            await widget._taskCreateController.save(_descriptionTec.text);
             Get.back();
           }
         },

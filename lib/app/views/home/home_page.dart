@@ -74,7 +74,8 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: context.primaryColor,
         onPressed: () {
-          Get.toNamed(Routes.taskCreate);
+          // Get.toNamed(Routes.taskCreate);
+          widget._homeController.addTask();
         },
         child: Icon(Icons.add),
       ),

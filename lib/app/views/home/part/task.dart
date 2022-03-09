@@ -31,7 +31,9 @@ class Task extends StatelessWidget {
               _homeController.checkOrUncheckTask(taskModel);
             },
           ),
-
+          onTap: () {
+            _homeController.editTask(taskModel.uuid);
+          },
           title: Text(
             taskModel.description,
             style: TextStyle(

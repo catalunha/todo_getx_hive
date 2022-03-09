@@ -14,7 +14,7 @@ class CalendarButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () async {
-        var lastDate = _controller.selectedDate!;
+        var lastDate = _controller.taskModel?.date ?? DateTime.now();
         final DateTime? selectedDate = await showDatePicker(
           context: context,
           initialDate: _controller.selectedDate!,

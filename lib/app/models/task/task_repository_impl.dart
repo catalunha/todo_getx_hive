@@ -82,4 +82,10 @@ class TaskRepositoryImp implements TaskRepository {
     final conn = await _hiveConnectionFactory.openConnection();
     await conn.delete(boxName: 'todo', fieldId: uuid);
   }
+
+  @override
+  Future<void> update(Map<String, dynamic> data) async {
+    final conn = await _hiveConnectionFactory.openConnection();
+    await conn.update(boxName: 'todo', data: data);
+  }
 }

@@ -30,4 +30,8 @@ class TaskServiceImp implements TaskService {
 
   @override
   Future<void> delete(String uuid) => _taskRepository.delete(uuid);
+
+  @override
+  Future<void> update(Map<String, dynamic> data) =>
+      _taskRepository.update(data);
 }

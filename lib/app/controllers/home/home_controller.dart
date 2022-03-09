@@ -8,6 +8,7 @@ import 'package:todo_getx_hive/app/models/database/hive/hive_exception.dart';
 import 'package:todo_getx_hive/app/models/task/group_tasks_model.dart';
 import 'package:todo_getx_hive/app/models/task/task_model.dart';
 import 'package:todo_getx_hive/app/models/task/task_respository_exception.dart';
+import 'package:todo_getx_hive/app/routes.dart';
 
 class HomeController extends GetxController with LoaderMixin, MessageMixin {
   final TaskService _taskService;
@@ -113,5 +114,15 @@ class HomeController extends GetxController with LoaderMixin, MessageMixin {
     await _taskService.checkOrUncheckTask(taskUpdated);
     await loadTasks(task.date);
     await groupByDay();
+  }
+
+  void addTask() {
+    Get.toNamed(Routes.taskCreate, arguments: null);
+  }
+
+  void editTask(String id) {
+    var _teamModel = allTasks.firstWhere((element) => element.uuid == id);
+
+    Get.toNamed(Routes.taskCreate, arguments: _teamModel);
   }
 }
