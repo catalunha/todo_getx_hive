@@ -18,15 +18,15 @@ class HiveConnectionFactory {
         if (_hiveDatabase == null) {
           print('+++> openConnection HiveDatabase');
           _hiveDatabase = HiveBase();
-          //print('+++> openConnection HiveDatabase 1');
+          print('+++> openConnection HiveDatabase 1');
           await _hiveDatabase!.initInFlutter();
-          //print('+++> openConnection HiveDatabase 2');
+          print('+++> openConnection HiveDatabase 2');
           await _hiveDatabase!.addBox('todo');
-          //print('+++> openConnection HiveDatabase 3');
+          print('+++> openConnection HiveDatabase 3');
           var listBoxes = await _hiveDatabase!.listOfBoxes();
-          //print('+++> openConnection HiveDatabase 4');
-          //print(listBoxes);
-          //print('+++> openConnection HiveDatabase 5');
+          print('+++> openConnection HiveDatabase 4');
+          print(listBoxes);
+          print('+++> openConnection HiveDatabase 5');
           // onConfigureBoxes();
         }
       });

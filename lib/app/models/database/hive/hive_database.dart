@@ -43,24 +43,25 @@ class HiveBase {
   }
 
   Future<void> initInFlutter({String? folder}) async {
-    //print('+++> HiveBaseBinitInFlutter');
+    print('+++> HiveBaseBinitInFlutter');
     _folder = folder ?? _folder;
-    //print('+++> HiveBaseBinitInFlutter 1');
+    print('+++> HiveBaseBinitInFlutter 1');
     _nameBoxes = folder ?? _folder;
-    //print('+++> HiveBaseBinitInFlutter 2');
+    print('+++> HiveBaseBinitInFlutter 2');
     try {
-      //print('+++> HiveBaseBinitInFlutter 3');
+      print('+++> HiveBaseBinitInFlutter 3');
       await Hive.initFlutter(_folder);
-      //print('+++> HiveBaseBinitInFlutter 4');
+      // await Hive.initFlutter();
+      print('+++> HiveBaseBinitInFlutter 4');
     } catch (e) {
-      //print('Erro: initInFlutter ');
+      print('Erro: initInFlutter $e');
       throw HiveBaseException(message: 'In initInFlutter. Erro no initFlutter');
     }
     await _getNameOfBoxes();
   }
 
   Future<void> _getNameOfBoxes() async {
-    //print('+++> HiveBaseB_getNameOfBoxes');
+    print('+++> HiveBaseB_getNameOfBoxes');
 
     var boxOpen = await Hive.openBox(_nameBoxes);
     if (!boxOpen.isOpen) {
@@ -76,11 +77,14 @@ class HiveBase {
   }
 
   _updateNameOfBoxes(dynamic boxes) {
-    //print('+++> HiveBaseB_updateNameOfBoxes');
+    print('+++> HiveBaseB_updateNameOfBoxes');
+    print(boxes);
+    print(boxes.runtimeType);
 
     if (boxes.isNotEmpty) {
       _boxes.clear();
-      _boxes.addAll(boxes);
+      // _boxes.addAll(boxes.cast<String>().iterator);
+      _boxes.addAll(boxes.cast<String>());
     }
   }
 
