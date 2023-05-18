@@ -39,8 +39,8 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyB4gGvCrbD3OwA54j_GaiDcxYYHm_B3LxI',
-    appId: '1:598064906974:web:bc3634507b584d0617384f',
+    apiKey: '',
+    appId: '1:598064906974:web:',
     messagingSenderId: '598064906974',
     projectId: 'todo-getx-hive',
     authDomain: 'todo-getx-hive.firebaseapp.com',
@@ -48,8 +48,8 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAJ6D-BsMLE3f-hx4FgwhZL7xDy8oyYHRw',
-    appId: '1:598064906974:web:bc3634507b584d0617384f',
+    apiKey: 'AIzaSyAJ6D--',
+    appId: '1:598064906974:web:',
     messagingSenderId: '598064906974',
     projectId: 'todo-getx-hive',
     storageBucket: 'todo-getx-hive.appspot.com',
